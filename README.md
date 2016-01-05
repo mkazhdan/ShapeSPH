@@ -5,7 +5,7 @@
 <A HREF="#NOTES">notes</A>
 </CENTER>
 <HR>
-<A NAME="DESCRIPTION"><B>CODE DESCRIPTION</B></A><br>
+<A NAME="DESCRIPTION"><B>REPOSITORY DESCRIPTION</B></A><br>
 <UL>
 This distribution is comprised of three repositories that use signal processing on the sphere and the group of rotations to compute affine-invariant shape descriptors, align models, and compute the reflective and rotational symmetries of a shape.
 The efficiency of the code is based on the fast signal processing code <A HREF="http://www.cs.dartmouth.edu/~geelong/sphere/">SpharmonicKit</A> and <A HREF="http://www.cs.dartmouth.edu/~geelong/soft/">SOFT</A> which are included in the distribution.
