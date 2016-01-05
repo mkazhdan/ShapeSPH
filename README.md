@@ -22,9 +22,9 @@ Code Description:
 Papers:
 <UL>
 <LI><A href="http://www.cs.jhu.edu/~misha/MyPapers/SGP03.pdf">Rotation Invariant Descriptors (SGP 2003)</A>
-<LI><A href="http://www.cs.jhu.edu/~misha/MyPapers/SIG04b.pdf">Rotation Alignment (SIGGRAPH 2004</A>
+<LI><A href="http://www.cs.jhu.edu/~misha/MyPapers/SIG04b.pdf">Rotation Alignment (SIGGRAPH 2004)</A>
 <LI><A href="http://www.cs.jhu.edu/~misha/MyPapers/SIG04.pdf">Scale Normalization (SIGGRAPH 2004)</A>
-<LI><A href="http://www.cs.jhu.edu/~misha/MyPapers/SGP04.pdf">Symmetry Detection (SGP 2004</A><br>
+<LI><A href="http://www.cs.jhu.edu/~misha/MyPapers/SGP04.pdf">Symmetry Detection (SGP 2004)</A><br>
 </UL>
 
 <HR>
