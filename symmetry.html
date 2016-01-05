@@ -1,0 +1,55 @@
+<CENTER><H1>Shape Symmetry Descriptors</H1></CENTER>
+<CENTER>
+<A HREF="#LINKS">links</A>
+<A HREF="#EXECUTABLE">executable</A>
+</CENTER>
+<HR>
+<A NAME="LINKS"><B>LINKS</B></A><br>
+<A href="http://www.cs.jhu.edu/~misha/MyPapers/SGP04.pdf">SGP 2004 Paper</A><br>
+<A href="ShapeSymmetry.exe">Windows (x64) Executable</A><br>
+
+<HR>
+<A NAME="EXECUTABLE"><B>EXECUTABLE ARGUMENTS (ShapeSymmetry.exe)</B></A><br>
+<UL>
+<DL>
+
+<DT><b>--in</b> &#60;<i>source triangle mesh</i>&#62;
+<DD> This string is the the name of the mesh whose symmetry descriptors are to be computed. The file is assumed to be in <A  HREF="http://www.cc.gatech.edu/projects/large_models/ply.html">PLY</A> format.
+
+<DT>[<b>--out</b> &#60;<i>output descriptor header</i>&#62;]
+<DD> This optional string is the the header of the files to which the symmetry descriptors are written. Files are written out as spherical grids to the files <B>&lt;<I>header</I>&gt;.ref.sgrid</B> (the reflective symmetry descriptor), <B>&lt;<I>header</I>&gt;.axial.sgrid</B> (the axial symmetry descriptor), and <B>&lt;<I>header</I>&gt;.rot.&lt;<I>rotation order</I>&gt;.sgrid</B> (the rotational symmetry descriptors).<BR>
+The descriptors are written out in binary, with the resolution (<I>R</I>) of the grid output first, followed by the (<I>R</I>x<I>R</I>) values. (See <I>SignalProcessing/SphericalGrid.inl</I> for details.) Values are sampled uniformly across longitude and lattitude, with the (<i>i</i>,<i>j</i>)-th sample residing at the point with spherical angles &theta;=2*&pi;*<i>i</i>/<i>R</i> and &phi;=&pi;*(2*<i>j</i>+1)/(2*<i>R</i>).
+
+<DT>[<b>--res</b> &#60;<i>voxel resolution</i>&#62;]
+<DD> 
+This optional integer specifies the resolution of the voxel grid into which the mesh is rasterized. The default value for this parameter is 64. 
+
+<DT>[<b>--threads</b> &#60;<i>number of threads</i>&#62;]
+<DD> 
+This optional integer specifies the number of threads across which the solver should be parallelized. The default value for this parameter is the number of threads on the machine.
+
+<DT>[<b>--radius</b> &#60;<i>moment radius</i>&#62;]
+<DD> 
+This optional floating point value specifies the multiple of the second-order moment radius that should be used for defining the canonical isotropic scale of a shape. The default value for this parameter is 2.0. 
+
+<DT>[<b>--fallOff</b> &#60;<i>Gaussian fall off</i>&#62;]
+<DD> 
+This optional floating point value specifies the radius of the Gaussian used to define Gaussian-EDT. The default value for this parameter is 2.828427.
+
+<DT>[<b>--maxSym</b> &#60;<i>maximum order of rotational symmetry</i>&#62;]
+<DD> 
+This optional integer specifies the largest order of rotational symmetry for which descriptors should be computed. The default value for this parameter is 6.
+
+
+<DT>[<b>--gedt</B>]
+<DD> If this optional argument is specified, the symmetry descriptors are computed by measuring the L2-distance between rotations of the shape's Gaussian-EDT. Otherwise, the symmetric sum-of-squared-distances is used.
+
+
+<DT>[<b>--double</B>]
+<DD> If this optional argument is specified, the computation is performed using double-precision arithmetic. Otherwise, single-precision arithmetic is used.
+
+<DT>[<b>--verbose</B>]
+<DD> If this optional argument is specified, the computation is run in "verbose" mode, outputting more information about the state of the computation of the shape descriptor.
+
+</DL>
+</UL>
