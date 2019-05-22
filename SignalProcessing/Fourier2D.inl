@@ -163,7 +163,7 @@ template<> void __FFTW_2D__< double >( int r , void* iValues , void* oValues )
 	fftw_execute( plan );
 	fftw_destroy_plan( plan );
 }
-template< class Real > void __FFTW_2D__< Real >( int r , void* iValues , void* oValues )
+template< class Real > void __FFTW_2D__( int r , void* iValues , void* oValues )
 {
 	fprintf( stderr , "[ERROR] FFTW_2D only supported for floats and doubles\n" );
 	exit( 0 );
@@ -193,7 +193,7 @@ template<> void __IFFTW_2D__< double >( int r , void* iValues , void* oValues )
 	fftw_execute( plan );
 	fftw_destroy_plan( plan );
 }
-template< class Real > void __IFFTW_2D__< Real >( int r , void* iValues , void* oValues )
+template< class Real > void __IFFTW_2D__( int r , void* iValues , void* oValues )
 {
 	fprintf( stderr , "[ERROR] IFFTW_2D only supported for floats and doubles\n" );
 	exit( 0 );

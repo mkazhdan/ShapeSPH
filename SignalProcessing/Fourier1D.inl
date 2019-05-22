@@ -28,6 +28,7 @@ DAMAGE.
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <algorithm>
 
 //#include "FFTW/fftw3.h"
 #include "fftw3.h"
@@ -156,7 +157,7 @@ template<> void __FFTW_1D__< double >( int r , void* iValues , void* oValues )
 	fftw_execute( plan );
 	fftw_destroy_plan( plan );
 }
-template< class Real > void __FFTW_1D__< Real >( int r , void* iValues , void* oValues )
+template< class Real > void __FFTW_1D__( int r , void* iValues , void* oValues )
 {
 	fprintf( stderr , "[ERROR] FFTW_1D only supported for floats and doubles\n" );
 	exit( 0 );
@@ -185,7 +186,7 @@ template<> void __IFFTW_1D__< double >( int r , void* iValues , void* oValues )
 	fftw_execute( plan );
 	fftw_destroy_plan( plan );
 }
-template< class Real > void __IFFTW_1D__< Real >( int r , void* iValues , void* oValues )
+template< class Real > void __IFFTW_1D__( int r , void* iValues , void* oValues )
 {
 	fprintf( stderr , "[ERROR] IFFTW_1D only supported for floats and doubles\n" );
 	exit( 0 );

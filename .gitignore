@@ -3,5 +3,10 @@
 /Obj/
 /Debug/
 /Bin/
+/.vs/
 *.opensdf
 *.bat
+*.tlog
+*.ipdb
+*.iobj
+*.zip

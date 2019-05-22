@@ -30,7 +30,7 @@ DAMAGE.
 #include <omp.h>
 
 #include "Util/Ply.h"
-#include "Util/cmdLineParser.h"
+#include "Util/CmdLineParser.h"
 #include "Util/Geometry.h"
 #include "Util/Util.h"
 #include "SignalProcessing/CubeGrid.h"
@@ -295,7 +295,8 @@ int _main_( void )
 }
 int main( int argc , char* argv[] )
 {
-	cmdLineParse( argc , argv , params , std::vector< std::string >() );
+	std::vector<std::string> nonoptArgs;
+	cmdLineParse( argc , argv , params , nonoptArgs );
 	if( !In.set )
 	{
 		ShowUsage( argv[0] );

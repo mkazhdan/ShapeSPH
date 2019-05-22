@@ -76,6 +76,7 @@ int SquareGrid<Real>::write(FILE* fp) const {
 template<class Real>
 int SquareGrid<Real>::resolution(void) const{return res;}
 
+template<>
 int SquareGrid<float>::resize( int  r)
 {
 	if( r<0 ) return 0;
@@ -93,6 +94,8 @@ int SquareGrid<float>::resize( int  r)
 		return 1;
 	}
 }
+
+template<>
 int SquareGrid<double>::resize( int r )
 {
 	if( r<0 ) return 0;
@@ -110,6 +113,8 @@ int SquareGrid<double>::resize( int r )
 		return 1;
 	}
 }
+
+template<>
 int SquareGrid< Complex<float> >::resize( int r)
 {
 	if( r<0 ) return 0;
@@ -127,6 +132,8 @@ int SquareGrid< Complex<float> >::resize( int r)
 		return 1;
 	}
 }
+
+template<>
 int SquareGrid< Complex<double> >::resize( int r )
 {
 	if( r<0 ) return 0;

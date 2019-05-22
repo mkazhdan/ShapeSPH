@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="complex.h" />
+    <ClInclude Include="cospmls.h" />
+    <ClInclude Include="csecond.h" />
+    <ClInclude Include="FFTcode.h" />
+    <ClInclude Include="fft_grids.h" />
+    <ClInclude Include="fft_grids_so3.h" />
+    <ClInclude Include="FST_semi_memo.h" />
+    <ClInclude Include="FST_semi_memo_fftw.h" />
+    <ClInclude Include="indextables.h" />
+    <ClInclude Include="makeWigner.h" />
+    <ClInclude Include="naive_synthesis.h" />
+    <ClInclude Include="newFCT.h" />
+    <ClInclude Include="oddweights.h" />
+    <ClInclude Include="OURmods.h" />
+    <ClInclude Include="OURperms.h" />
+    <ClInclude Include="permroots.h" />
+    <ClInclude Include="primitive.h" />
+    <ClInclude Include="primitive_FST.h" />
+    <ClInclude Include="rotate_so3.h" />
+    <ClInclude Include="rotate_so3_mem.h" />
+    <ClInclude Include="seminaive.h" />
+    <ClInclude Include="seminaive_fftw.h" />
+    <ClInclude Include="so3_correlate_fftw.h" />
+    <ClInclude Include="so3_correlate_sym.h" />
+    <ClInclude Include="soft.h" />
+    <ClInclude Include="soft_fftw.h" />
+    <ClInclude Include="soft_fftw_pc.h" />
+    <ClInclude Include="soft_fftw_wo.h" />
+    <ClInclude Include="soft_sym.h" />
+    <ClInclude Include="utils_so3.h" />
+    <ClInclude Include="utils_vec_cx.h" />
+    <ClInclude Include="weights.h" />
+    <ClInclude Include="wignerTransforms.h" />
+    <ClInclude Include="wignerTransforms_fftw.h" />
+    <ClInclude Include="wignerTransforms_sym.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cospmls.cpp" />
+    <ClCompile Include="csecond.cpp" />
+    <ClCompile Include="FFTcode.cpp" />
+    <ClCompile Include="fft_grids.cpp" />
+    <ClCompile Include="fft_grids_so3.cpp" />
+    <ClCompile Include="FST_semi_memo.cpp" />
+    <ClCompile Include="FST_semi_memo_fftw.cpp" />
+    <ClCompile Include="indextables.cpp" />
+    <ClCompile Include="makeWigner.cpp" />
+    <ClCompile Include="naive_synthesis.cpp" />
+    <ClCompile Include="newFCT.cpp" />
+    <ClCompile Include="oddweights.cpp" />
+    <ClCompile Include="OURmods.cpp" />
+    <ClCompile Include="OURperms.cpp" />
+    <ClCompile Include="permroots.cpp" />
+    <ClCompile Include="primitive.cpp" />
+    <ClCompile Include="primitive_FST.cpp" />
+    <ClCompile Include="rotate_so3.cpp" />
+    <ClCompile Include="rotate_so3_mem.cpp" />
+    <ClCompile Include="seminaive.cpp" />
+    <ClCompile Include="seminaive_fftw.cpp" />
+    <ClCompile Include="so3_correlate_fftw.cpp" />
+    <ClCompile Include="so3_correlate_sym.cpp" />
+    <ClCompile Include="soft.cpp" />
+    <ClCompile Include="soft_fftw.cpp" />
+    <ClCompile Include="soft_fftw_pc.cpp" />
+    <ClCompile Include="soft_fftw_wo.cpp" />
+    <ClCompile Include="soft_sym.cpp" />
+    <ClCompile Include="utils_so3.cpp" />
+    <ClCompile Include="utils_vec_cx.cpp" />
+    <ClCompile Include="weights.cpp" />
+    <ClCompile Include="wignerTransforms.cpp" />
+    <ClCompile Include="wignerTransforms_fftw.cpp" />
+    <ClCompile Include="wignerTransforms_sym.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{309F1A4F-6E10-4EA2-AA9D-65B8618ABB11}</ProjectGuid>
+    <RootNamespace>Soft</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Bin\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)Objects\$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

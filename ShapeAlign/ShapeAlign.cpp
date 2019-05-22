@@ -30,7 +30,7 @@ DAMAGE.
 #include <omp.h>
 
 #include "Util/Ply.h"
-#include "Util/cmdLineParser.h"
+#include "Util/CmdLineParser.h"
 #include "Util/Geometry.h"
 #include "Util/Util.h"
 #include "SignalProcessing/CubeGrid.h"
@@ -182,7 +182,7 @@ SquareMatrix< Real , 3 > _main_( const std::vector< Point3D< Real > >& vertices1
 	}
 	if( Verbose.set ) printf( "\t\tWigner-D Time: %.2f(s)\n" , Time()-t );
 
-	SquareMatrix< Real , 4 > minRotation=SquareMatrix< Real , 4 >::Identity() , maxRotation=SquareMatrix< Real , 4 >::Identity();
+	SquareMatrix< Real , 3 > minRotation=SquareMatrix< Real , 3 >::Identity() , maxRotation=SquareMatrix< Real , 3 >::Identity();
 	Real minCorrelation=0 , maxCorrelation=0;
 	for( int i=0 ; i<Resolution.value ; i++ ) for( int j=0 ; j<Resolution.value ; j++ ) for( int k=0 ; k<Resolution.value ; k++ )
 	{
@@ -272,7 +272,8 @@ int _main_( void )
 }
 int main( int argc , char* argv[] )
 {
-	cmdLineParse( argc , argv , params , std::vector< std::string >() );
+	std::vector<std::string> nonoptArgs;
+	cmdLineParse( argc , argv , params , nonoptArgs );
 	if( !In1.set || !In2.set )
 	{
 		ShowUsage( argv[0] );

@@ -77,6 +77,7 @@ int CubeGrid<Real>::write(FILE* fp) const {
 template<class Real>
 int CubeGrid<Real>::resolution(void) const{return res;}
 
+template<>
 int CubeGrid<float>::resize(const int& r){
 	if(r<0){return 0;}
 	else{
@@ -92,6 +93,7 @@ int CubeGrid<float>::resize(const int& r){
 		return 1;
 	}
 }
+template<>
 int CubeGrid<double>::resize(const int& r){
 	if(r<0){return 0;}
 	else{
@@ -107,6 +109,7 @@ int CubeGrid<double>::resize(const int& r){
 		return 1;
 	}
 }
+template<>
 int CubeGrid<Complex<float> >::resize(const int& r){
 	if(r<0){return 0;}
 	else{
@@ -122,6 +125,7 @@ int CubeGrid<Complex<float> >::resize(const int& r){
 		return 1;
 	}
 }
+template<>
 int CubeGrid<Complex<double> >::resize(const int& r){
 	if(r<0){return 0;}
 	else{

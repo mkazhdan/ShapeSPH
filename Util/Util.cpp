@@ -36,8 +36,6 @@ DAMAGE.
 #include "Util.h"
 
 //#if 1 //LINJIE_COMPILE_COMPLIANCE
-#ifndef WIN32
-#else
 double Time( void )
 {
 #ifdef WIN32
@@ -50,7 +48,6 @@ double Time( void )
 	return t.tv_sec+(double)t.tv_usec/1000000;
 #endif // WIN32
 }
-#endif
 
 void DumpOutput( const char* fileName , bool echoStdout , const char* format , ... )
 {
@@ -124,8 +121,8 @@ int offset_fprintf( FILE* fp , unsigned int str_size , const char* format , ... 
 	vsprintf( temp , format , args );
 	va_end( args );
 	for( int i=0 ; i<( (int)str_size )-( (int)strlen(temp) ) ; i++ ) fprintf( fp , " " );
-	if( strlen(temp)<=str_size ) return fprintf( fp , temp );
-	else                         return fprintf( fp , temp + strlen(temp) - str_size );
+	if( strlen(temp)<=str_size ) return fprintf( fp , "%s" , temp );
+	else                         return fprintf( fp , "%s" , temp + strlen(temp) - str_size );
 }
 /////////////////
 // ProgressBar //

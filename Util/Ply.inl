@@ -735,7 +735,7 @@ int MReadTriangles( const char* fileName , std::vector<Vertex>& vertices , std::
 	FILE* fp = fopen( fileName , "r" );
 	if( !fp ) return 0;
 
-	stdext::hash_map< int , int > vMap;
+	std::unordered_map< int , int > vMap;
 	while( fgets( line , 2047 , fp ) )
 	{
 		Vertex v;

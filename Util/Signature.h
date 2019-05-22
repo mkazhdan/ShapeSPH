@@ -94,7 +94,7 @@ bool Signature< Real >::read( const char* fileName )
 }
 
 template< class Real >
-bool Signature< Real >::write( const char* fileName , bool binary=false ) const
+bool Signature< Real >::write( const char* fileName , bool binary ) const
 {
 	FILE* fp = fopen( fileName , "wb" );
 	if( !fp )
@@ -102,10 +102,10 @@ bool Signature< Real >::write( const char* fileName , bool binary=false ) const
 		fprintf( stderr , "[ERROR] Failed to open file for writing: %s\n" , fileName );
 		return false;
 	}
-	if( binary ) fprintf( fp , "%d BINARY\n" , values.size() ) , fwrite( &values[0] , sizeof( Real ) , values.size() , fp );
+	if( binary ) fprintf( fp , "%d BINARY\n" , (int)values.size() ) , fwrite( &values[0] , sizeof( Real ) , values.size() , fp );
 	else
 	{
-		fprintf( fp , "%d ASCII\n" , values.size() );
+		fprintf( fp , "%d ASCII\n" , (int)values.size() );
 		for( int i=0 ; i<values.size() ; i++ ) fprintf( fp , " %f" , values[i] );
 		fprintf( fp , "\n" );
 	}

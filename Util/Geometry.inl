@@ -35,7 +35,6 @@ DAMAGE.
 #include <string.h>
 #endif
 #include <float.h>
-#include <hash_map>
 
 inline long long HalfEdgeKey( int i1 , int i2 )
 {

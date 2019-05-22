@@ -195,6 +195,7 @@ template< class Real > HarmonicTransform< Real >::HarmonicTransform( void ){ ; }
 template< class Real > HarmonicTransform< Real >::HarmonicTransform( int resolution ){ resize( resolution ); }
 template<class Real>
 void HarmonicTransform<Real>::resize( const int& resolution ){ scratch.resize(resolution>>1); }
+template<>
 int HarmonicTransform< double >::ForwardFourier( SphericalGrid< double >& g , FourierKeyS2< double >& key )
 {
 	int sz,bw;
@@ -205,6 +206,7 @@ int HarmonicTransform< double >::ForwardFourier( SphericalGrid< double >& g , Fo
 	FST_semi_memo_fftw( g[0] , (fftw_complex*)&key(0,0) , sz , scratch.table , scratch.workSpace );
 	return 1;
 }
+template<>
 int HarmonicTransform<float>::ForwardFourier( SphericalGrid<float>& g , FourierKeyS2<float>& key )
 {
 	int sz = g.resolution() , bw = sz>>1;
@@ -218,6 +220,7 @@ int HarmonicTransform<Real>::ForwardFourier(SphericalGrid<Real>&,FourierKeyS2<Re
 	fprintf(stderr,"Harmonic Transform only supported for floats and doubles\n");
 	return 0;
 }
+template<>
 int HarmonicTransform<double>::InverseFourier(FourierKeyS2<double>& key,SphericalGrid<double>& g){
 	if(key.resolution()!=g.resolution()){g.resize(key.resolution());}
 	int bw=key.bandWidth(),sz=g.resolution();
@@ -226,6 +229,7 @@ int HarmonicTransform<double>::InverseFourier(FourierKeyS2<double>& key,Spherica
 	InvFST_semi_memo_fftw((fftw_complex*)&key(0,0),g[0],sz,scratch.transposeTable,scratch.workSpace);
 	return 1;
 }
+template<>
 int HarmonicTransform<float>::InverseFourier(FourierKeyS2<float>& key,SphericalGrid<float>& g)
 {
 	if(key.resolution()!=g.resolution()){g.resize(key.resolution());}

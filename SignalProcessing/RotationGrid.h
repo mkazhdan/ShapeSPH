@@ -45,6 +45,9 @@ DAMAGE.
 template< class Real=float >
 class RotationGrid : public CubeGrid< Real >{
 public:
+	using CubeGrid< Real >::res;
+	using CubeGrid< Real >::values;
+	using CubeGrid< Real >::resize;
 	RotationGrid( void );
 	RotationGrid( int res );
 	~RotationGrid( void );

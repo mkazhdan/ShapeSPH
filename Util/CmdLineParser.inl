@@ -240,7 +240,7 @@ inline int cmdLineIntSequence::read(char **argv, int argc)
 			increment = 1;
 			assigned = sscanf(argString, "%d:%d", &start, &end);
 			if (assigned != 2)	{
-				assigned = sscanf(argString, "%d", &start, &end);
+				assigned = sscanf(argString, "%d", &start);
 				end = start;
 				if (assigned != 1)	{
 					start = value;

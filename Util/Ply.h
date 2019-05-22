@@ -38,6 +38,7 @@
 #ifndef PLY_INCLUDED
 #define PLY_INCLUDED
 #include <vector>
+#include <unordered_map>
 #include "Geometry.h"
 #include "PlyFile.h"
 #include "Algebra.h"

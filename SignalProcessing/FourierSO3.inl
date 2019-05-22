@@ -48,7 +48,7 @@ template< class Real >
 FourierKeySO3< Real >& FourierKeySO3< Real >::operator = ( const FourierKeySO3< Real >& key )
 {
 	resize( key.resolution() );
-	memcpy( values , key.values , sizeof( Complex< Real > ) * Entires(bw) );
+	memcpy( values , key.values , sizeof( Complex< Real > ) * Entries(bw) );
 	return *this;
 }
 

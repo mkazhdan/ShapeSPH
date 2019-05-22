@@ -31,6 +31,7 @@ DAMAGE.
 #include <cassert>
 #include <complex>
 #include <vector>
+#include <cstring>
 #include "Algebra.h"
 
 #define PAN_FIX 1
@@ -124,6 +125,7 @@ public:
 
     using Matrix< Real , Dim , Dim >::operator *;
     using Matrix< Real , Dim , Dim >::operator ();
+	using Matrix< Real , Dim , Dim >::coords;
 };
 template< class V , int Dim , class _R = typename V::R >
 class Gradient : public VectorSpace< _R , Gradient< V , Dim , _R > >
@@ -284,6 +286,8 @@ public:
     Point2D( void ) : Point< Real , 2 >(){;}
     Point2D( const Point< Real , 2 >& p) { memcpy(this->coords,p.coords,sizeof(Real)*2); }
     Point2D( Real v1 , Real v2 ) { coords[0] = v1 , coords[1] = v2; }
+
+	using Point< Real , 2 >::coords;
 };
 
 template< class Real >
